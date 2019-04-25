@@ -15,9 +15,9 @@ public class CoinBehavior : MonoBehaviour {
         GMS = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
         GMS.cur_coins++;
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
         transform.Rotate(Vector3.left * rotateSpeed);
     }
 
@@ -31,6 +31,7 @@ public class CoinBehavior : MonoBehaviour {
             GMS.cur_coins--;
             //adding score...
             GMS.UpdateUI();
+
         }
 
     }
