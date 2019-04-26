@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,12 +12,16 @@ public class characterController : MonoBehaviour
     public AudioSource tickSource;
 
     // Use this for initialization
+
+
     void Start()
     {
+
         Cursor.lockState = CursorLockMode.Locked;
 
         tickSource = GetComponent<AudioSource>();
     }
+
 
     // Update is called once per frame
     void Update()
@@ -32,6 +37,7 @@ public class characterController : MonoBehaviour
         //if we hit the space key, we gwt our cursor back
         if (Input.GetKeyDown("space"))
             Cursor.lockState = CursorLockMode.None;
+
     }
 
     private void OnCollisionEnter(Collision collision)

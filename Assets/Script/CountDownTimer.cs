@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class CountDownTimer : MonoBehaviour {
 
     float currentTime = 0f;
-    float startingTime = 5f;
+    float startingTime = 10f;
+
+    public GameObject timeIsUp;
 
     [SerializeField]Text countdownText;
 
@@ -27,7 +29,16 @@ public class CountDownTimer : MonoBehaviour {
         }
         //Do not wanna see the minus number
         else {
-            countdownText.text = "Game Over!!!";
+            Time.timeScale = 0;
+            timeIsUp.gameObject.SetActive(true);
+            //time left text disappear
+            countdownText.gameObject.SetActive(false);
+        }
+
+        //change text color when less 3 second
+        if (currentTime < 3)
+        {
+            countdownText.color = Color.yellow;
         }
     }
 }
