@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CountDownTimer : MonoBehaviour {
 
     float currentTime = 0f;
-    float startingTime = 10f;
+    float startingTime = 100f;
 
     public GameObject timeIsUp;
 

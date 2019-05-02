@@ -8,6 +8,9 @@ TagManager:
   - player
   - door
   - wall
+  - congratulation
+  - menu
+  - PuzzleBtn
   layers:
   - Default
   - TransparentFX
