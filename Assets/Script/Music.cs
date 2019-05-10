@@ -21,6 +21,7 @@ public class Music : MonoBehaviour {
         }
     }
 
+    //Using for mute and unmute the background music
     public void ToggleSound()
     {
         if (PlayerPrefs.GetInt("Muted", 0) == 0)

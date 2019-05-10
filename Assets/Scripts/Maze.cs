@@ -4,10 +4,14 @@ using System.Collections.Generic;
 
 public class Maze : MonoBehaviour {
 
+    //Adjust Maze so it uses IntVectors when creating the cells and for it size as well, instead of using two seperate integers
+    //set the size as 20x20
 	public IntVector2 size;
 
+    //cell prefab to instantiate
 	public MazeCell cellPrefab;
 
+    //use to insert some delay before each step, could be change in inspector
 	public float generationStepDelay;
 
 	public MazePassage passagePrefab;
@@ -21,27 +25,35 @@ public class Maze : MonoBehaviour {
 
 	public MazeRoomSettings[] roomSettings;
 
+    //store the cell in a 2D array
 	private MazeCell[,] cells;
 
 	private List<MazeRoom> rooms = new List<MazeRoom>();
 
+    //prduces some coordinates inside it
 	public IntVector2 RandomCoordinates {
 		get {
 			return new IntVector2(Random.Range(0, size.x), Random.Range(0, size.z));
 		}
 	}
 
+    //checks whether some coordinates fall inside the maze
 	public bool ContainsCoordinates (IntVector2 coordinate) {
 		return coordinate.x >= 0 && coordinate.x < size.x && coordinate.z >= 0 && coordinate.z < size.z;
 	}
 
+    //generate new cell in a random direction each step
 	public MazeCell GetCell (IntVector2 coordinates) {
 		return cells[coordinates.x, coordinates.z];
 	}
 
+    //constructing the maze contents
 	public IEnumerator Generate () {
-		WaitForSeconds delay = new WaitForSeconds(generationStepDelay);
-		cells = new MazeCell[size.x, size.z];
+        //delay the generation process, so we can see how it works. change generation to coroutine
+        //20x20 cells grid in 4 seconds
+        WaitForSeconds delay = new WaitForSeconds(generationStepDelay);
+        //IntVector2
+        cells = new MazeCell[size.x, size.z];
 		List<MazeCell> activeCells = new List<MazeCell>();
 		DoFirstGenerationStep(activeCells);
 		while (activeCells.Count > 0) {
@@ -56,6 +68,7 @@ public class Maze : MonoBehaviour {
 		activeCells.Add(newCell);
 	}
 
+    //retrieve the current cell, check whether the move is possible
 	private void DoNextGenerationStep (List<MazeCell> activeCells) {
 		int currentIndex = activeCells.Count - 1;
 		MazeCell currentCell = activeCells[currentIndex];
@@ -84,12 +97,20 @@ public class Maze : MonoBehaviour {
 		}
 	}
 
+    //the creation of individual cells
 	private MazeCell CreateCell (IntVector2 coordinates) {
-		MazeCell newCell = Instantiate(cellPrefab) as MazeCell;
-		cells[coordinates.x, coordinates.z] = newCell;
-		newCell.coordinates = coordinates;
+        //instantiate a new cell
+        MazeCell newCell = Instantiate(cellPrefab) as MazeCell;
+        //put cell into array
+        //IntVector2
+        cells[coordinates.x, coordinates.z] = newCell;
+        //IntVector2
+        newCell.coordinates = coordinates;
+        //give the cell a descriptive name
 		newCell.name = "Maze Cell " + coordinates.x + ", " + coordinates.z;
+        //make the cell a child object of the maze
 		newCell.transform.parent = transform;
+        //position it to the center
 		newCell.transform.localPosition = new Vector3(coordinates.x - size.x * 0.5f + 0.5f, 0f, coordinates.z - size.z * 0.5f + 0.5f);
 		return newCell;
 	}

@@ -19,6 +19,7 @@ public class GameManagerScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        Time.timeScale = 1f;
         //Door only active when coin equal or less than zero
         Door.SetActive (false);
         max_coins = cur_coins;
@@ -43,6 +44,14 @@ public class GameManagerScript : MonoBehaviour {
             coinsLeft.text = "Coins Left: " + cur_coins.ToString("D2") + "/" + max_coins.ToString("D2");
         }
         
+    }
+
+    public void ResetGame()
+    {
+        Time.timeScale = 1f;
+#pragma warning disable CS0618 // Type or member is obsolete
+        Application.LoadLevel(Application.loadedLevel);
+#pragma warning restore CS0618 // Type or member is obsolete
     }
 
 }

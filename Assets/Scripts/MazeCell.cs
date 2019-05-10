@@ -2,6 +2,7 @@
 
 public class MazeCell : MonoBehaviour {
 
+    //use integer vector to add coordicates to the MazeCell
 	public IntVector2 coordinates;
 
 	public MazeRoom room;

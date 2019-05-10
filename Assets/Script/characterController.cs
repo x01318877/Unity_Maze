@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class characterController : MonoBehaviour
 {
@@ -16,9 +17,6 @@ public class characterController : MonoBehaviour
 
     void Start()
     {
-
-        Cursor.lockState = CursorLockMode.Locked;
-
         tickSource = GetComponent<AudioSource>();
     }
 
@@ -34,10 +32,6 @@ public class characterController : MonoBehaviour
 
         transform.Translate(straffe, 0, translation);
 
-        //if we hit the space key, we gwt our cursor back
-        if (Input.GetKeyDown("space"))
-            Cursor.lockState = CursorLockMode.None;
-
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -45,6 +39,12 @@ public class characterController : MonoBehaviour
         if (collision.gameObject.tag == "coin") {
             //Add sound when touch the object
             tickSource.Play();
+        }
+
+        if (collision.gameObject.tag == "task")
+        {
+            //Add sound when touch the object
+            SceneManager.LoadScene(7);
         }
     }
 }
