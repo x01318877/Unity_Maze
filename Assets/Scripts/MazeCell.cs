@@ -2,6 +2,7 @@
 
 public class MazeCell : MonoBehaviour {
 
+    //use integer vector to add coordicates to the MazeCell
 	public IntVector2 coordinates;
 
 	public MazeRoom room;
@@ -16,7 +17,11 @@ public class MazeCell : MonoBehaviour {
 		}
 	}
 
-	public MazeDirection RandomUninitializedDirection {
+    //To get an unbiased random uninitialized direction is a little less straightforward. 
+    //One way is to randomly decide how many uninitialized directions we should skip. 
+    //Then we loop through our edges array and whenever we find a hole we check whether we are out of skips. 
+    //If so, this is our direction. Otherwise, we decrease our amount of skips by one.
+    public MazeDirection RandomUninitializedDirection {
 		get {
 			int skips = Random.Range(0, MazeDirections.Count - initializedEdgeCount);
 			for (int i = 0; i < MazeDirections.Count; i++) {
@@ -36,6 +41,7 @@ public class MazeCell : MonoBehaviour {
 		transform.GetChild(0).GetComponent<Renderer>().material = room.settings.floorMaterial;
 	}
 
+    //store the edges in the array
 	public MazeCellEdge GetEdge (MazeDirection direction) {
 		return edges[(int)direction];
 	}

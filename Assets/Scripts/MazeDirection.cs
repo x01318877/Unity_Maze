@@ -1,14 +1,17 @@
 ﻿using UnityEngine;
 
 public enum MazeDirection {
+    //define that we have four directions
 	North,
 	East,
 	South,
 	West
 }
 
+//enum is not a class or struct so we can not define methods or properties inside it
 public static class MazeDirections {
 
+    //how many direction: 4
 	public const int Count = 4;
 
 	public static MazeDirection RandomValue {
@@ -36,6 +39,7 @@ public static class MazeDirections {
 		return (MazeDirection)(((int)direction + Count - 1) % Count);
 	}
 	
+    //adjust the current coordinates
 	private static IntVector2[] vectors = {
 		new IntVector2(0, 1),
 		new IntVector2(1, 0),
@@ -43,10 +47,12 @@ public static class MazeDirections {
 		new IntVector2(-1, 0)
 	};
 	
+    //convert an arbitrary direction into an integer vector
 	public static IntVector2 ToIntVector2 (this MazeDirection direction) {
 		return vectors[(int)direction];
 	}
 
+    //for rotating the cell edge
 	private static Quaternion[] rotations = {
 		Quaternion.identity,
 		Quaternion.Euler(0f, 90f, 0f),

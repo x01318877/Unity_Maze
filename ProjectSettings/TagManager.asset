@@ -11,6 +11,7 @@ TagManager:
   - congratulation
   - menu
   - PuzzleBtn
+  - task
   layers:
   - Default
   - TransparentFX
