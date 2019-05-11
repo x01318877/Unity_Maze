@@ -884,6 +884,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingTime: 250
   timeIsUp: {fileID: 801983558}
+  retryBtn: {fileID: 0}
   countdownText: {fileID: 578672810}
 --- !u!1001 &801983557
 Prefab:

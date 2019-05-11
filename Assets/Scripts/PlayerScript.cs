@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+<<<<<<< HEAD
 public class PlayerScript : MonoBehaviour
 {
+=======
+public class PlayerScript : MonoBehaviour {
+>>>>>>> 5634003b430d2f366afef1a5d6109ebcbb4c48f9
     //player speed(public means we can access our speed from the inspector)
     public float speed;
     //what direction the player moves in(how many times player clicks, 90 degree)
@@ -27,8 +31,11 @@ public class PlayerScript : MonoBehaviour
 
     public Animator gameOverAnim;
 
+<<<<<<< HEAD
     public Animator finishTaskAnim;
 
+=======
+>>>>>>> 5634003b430d2f366afef1a5d6109ebcbb4c48f9
     //Menu score text
     //public Text lastScoreText;
     //public Text bestText;
@@ -52,6 +59,7 @@ public class PlayerScript : MonoBehaviour
     //Audio Collider
     public AudioSource tickSource;
 
+<<<<<<< HEAD
     //delay before loading the another scene
     [SerializeField]
     private float delayBeforeLoading;
@@ -64,12 +72,18 @@ public class PlayerScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+=======
+
+    // Use this for initialization
+    void Start () {
+>>>>>>> 5634003b430d2f366afef1a5d6109ebcbb4c48f9
         isDead = false;
         //before click, the ball stay still on the screen
         dir = Vector3.zero;
 
         tickSource = GetComponent<AudioSource>();
 
+<<<<<<< HEAD
     }
 
     // Update is called once per frame
@@ -78,6 +92,14 @@ public class PlayerScript : MonoBehaviour
 
         if (!IsGrounded() && isPlaying)
         {
+=======
+	}
+	
+	// Update is called once per frame
+	void Update () {
+
+        if (!IsGrounded() && isPlaying) {
+>>>>>>> 5634003b430d2f366afef1a5d6109ebcbb4c48f9
             //kill player
             isDead = true;
 
@@ -95,22 +117,34 @@ public class PlayerScript : MonoBehaviour
         //CHANGING DIRECTION
         //GetMouseButtonDown works for louse click and phone touch
         //isDead: if player dead we can't change the direction anymore
+<<<<<<< HEAD
         if (Input.GetKeyDown("space") && !isDead)
         {
+=======
+        if (Input.GetKeyDown("space") && !isDead) {
+>>>>>>> 5634003b430d2f366afef1a5d6109ebcbb4c48f9
 
             isPlaying = true;
 
             //When we click the button, the score +1
             score++;
             scoreText.text = score.ToString();
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> 5634003b430d2f366afef1a5d6109ebcbb4c48f9
             //If the player moving forward, for next click the player moving left
             if (dir == Vector3.forward)
             {
                 dir = Vector3.left;
             }
+<<<<<<< HEAD
             else
             {
+=======
+            else {
+>>>>>>> 5634003b430d2f366afef1a5d6109ebcbb4c48f9
                 dir = Vector3.forward;
             }
         }
@@ -121,6 +155,7 @@ public class PlayerScript : MonoBehaviour
         //transform: access the transform component; Translate function to move
         transform.Translate(dir * amoutToMove);
 
+<<<<<<< HEAD
         if (score >= 30)
         {
             //Make the payer to stop
@@ -136,18 +171,29 @@ public class PlayerScript : MonoBehaviour
             }
         }
     }
+=======
+	}
+>>>>>>> 5634003b430d2f366afef1a5d6109ebcbb4c48f9
 
     //Pickup the pickup object
     private void OnTriggerEnter(Collider other)
     {
         //RED Mushroom increase score
+<<<<<<< HEAD
         if (other.tag == "Pickup1")
         {
+=======
+        if (other.tag == "Pickup1") {
+>>>>>>> 5634003b430d2f366afef1a5d6109ebcbb4c48f9
             //hide the pickup object
             other.gameObject.SetActive(false);
             //Instantiate the particle system
             Instantiate(ps, transform.position, Quaternion.identity);
+<<<<<<< HEAD
             score += 3;
+=======
+            score+= 3;
+>>>>>>> 5634003b430d2f366afef1a5d6109ebcbb4c48f9
             scoreText.text = score.ToString();
             CombatTextManager.Instance.CreateText(other.transform.position, "+3", Color.green, true);
             //Add sound when touch the object
@@ -178,13 +224,21 @@ public class PlayerScript : MonoBehaviour
 
         //playerprefs is a way of saving something and loading something in the memory in unity
         //default value is 0
+<<<<<<< HEAD
         int bestScore = PlayerPrefs.GetInt("BestScore", 0);
+=======
+        int bestScore = PlayerPrefs.GetInt("BestScore",0);
+>>>>>>> 5634003b430d2f366afef1a5d6109ebcbb4c48f9
 
         if (score > bestScore)
         {
             PlayerPrefs.SetInt("BestScore", score);
             newHighScore.gameObject.SetActive(true);
+<<<<<<< HEAD
             background.color = new Color32(227, 135, 46, 255);
+=======
+            background.color = new Color32(227,135,46,255);
+>>>>>>> 5634003b430d2f366afef1a5d6109ebcbb4c48f9
 
             foreach (Text txt in scoreTexts)
             {
@@ -213,5 +267,8 @@ public class PlayerScript : MonoBehaviour
 
         return false;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5634003b430d2f366afef1a5d6109ebcbb4c48f9
 }

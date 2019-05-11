@@ -41,6 +41,14 @@ public class characterController : MonoBehaviour
             tickSource.Play();
         }
 
+<<<<<<< HEAD
 
+=======
+        if (collision.gameObject.tag == "task")
+        {
+            //Add sound when touch the object
+            SceneManager.LoadScene(7);
+        }
+>>>>>>> 5634003b430d2f366afef1a5d6109ebcbb4c48f9
     }
 }

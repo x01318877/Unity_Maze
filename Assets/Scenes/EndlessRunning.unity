@@ -528,7 +528,10 @@ MonoBehaviour:
   resetBtn: {fileID: 1086339990}
   scoreText: {fileID: 621471949}
   gameOverAnim: {fileID: 1764510645}
+<<<<<<< HEAD
   finishTaskAnim: {fileID: 1582131284}
+=======
+>>>>>>> 5634003b430d2f366afef1a5d6109ebcbb4c48f9
   newHighScore: {fileID: 216167581}
   background: {fileID: 1365893108}
   scoreTexts:
@@ -541,8 +544,11 @@ MonoBehaviour:
     m_Bits: 4294967295
   contactPoint: {fileID: 909071091}
   tickSource: {fileID: 0}
+<<<<<<< HEAD
   delayBeforeLoading: 2
   sceneNameToLoad: Square2
+=======
+>>>>>>> 5634003b430d2f366afef1a5d6109ebcbb4c48f9
 --- !u!54 &520969877
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1143,7 +1149,10 @@ RectTransform:
   - {fileID: 621471948}
   - {fileID: 1764510643}
   - {fileID: 1642668950}
+<<<<<<< HEAD
   - {fileID: 1582131282}
+=======
+>>>>>>> 5634003b430d2f366afef1a5d6109ebcbb4c48f9
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1266,7 +1275,11 @@ MonoBehaviour:
     topRight: {r: 1, g: 1, b: 1, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
+<<<<<<< HEAD
   m_fontColorGradientPreset: {fileID: 11400000, guid: 2ca6fc1ceebc0ef43866c8de5f794aa6,
+=======
+  m_fontColorGradientPreset: {fileID: 11400000, guid: a41fc2be99f5447438a2afaac15a109e,
+>>>>>>> 5634003b430d2f366afef1a5d6109ebcbb4c48f9
     type: 2}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -1666,12 +1679,15 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadMenu
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 114231818924354958, guid: 81ef28b3d1160f04391239903ba7dda4,
         type: 2}
       propertyPath: m_fontColorGradientPreset
       value: 
       objectReference: {fileID: 11400000, guid: 2ca6fc1ceebc0ef43866c8de5f794aa6,
         type: 2}
+=======
+>>>>>>> 5634003b430d2f366afef1a5d6109ebcbb4c48f9
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81ef28b3d1160f04391239903ba7dda4, type: 2}
   m_IsPrefabAsset: 0
@@ -1719,6 +1735,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &1218655524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1875,6 +1892,8 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1218655524}
   m_CullTransparentMesh: 0
+=======
+>>>>>>> 5634003b430d2f366afef1a5d6109ebcbb4c48f9
 --- !u!1 &1233423534
 GameObject:
   m_ObjectHideFlags: 0
@@ -1950,6 +1969,7 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1233423534}
   m_CullTransparentMesh: 0
+<<<<<<< HEAD
 --- !u!1 &1276519290
 GameObject:
   m_ObjectHideFlags: 0
@@ -2106,6 +2126,8 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1276519290}
   m_CullTransparentMesh: 0
+=======
+>>>>>>> 5634003b430d2f366afef1a5d6109ebcbb4c48f9
 --- !u!1 &1365893106
 GameObject:
   m_ObjectHideFlags: 0
@@ -2270,6 +2292,7 @@ RectTransform:
   m_AnchoredPosition: {x: 286, y: 111.5}
   m_SizeDelta: {x: 572, y: 223}
   m_Pivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
 --- !u!1 &1582131281
 GameObject:
   m_ObjectHideFlags: 0
@@ -2332,6 +2355,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+=======
+>>>>>>> 5634003b430d2f366afef1a5d6109ebcbb4c48f9
 --- !u!1001 &1592227202
 Prefab:
   m_ObjectHideFlags: 0
@@ -2498,12 +2523,15 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Resume
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 114231818924354958, guid: 81ef28b3d1160f04391239903ba7dda4,
         type: 2}
       propertyPath: m_fontColorGradientPreset
       value: 
       objectReference: {fileID: 11400000, guid: 2ca6fc1ceebc0ef43866c8de5f794aa6,
         type: 2}
+=======
+>>>>>>> 5634003b430d2f366afef1a5d6109ebcbb4c48f9
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81ef28b3d1160f04391239903ba7dda4, type: 2}
   m_IsPrefabAsset: 0
