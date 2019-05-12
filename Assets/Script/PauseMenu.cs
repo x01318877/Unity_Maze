@@ -97,6 +97,7 @@ public class PauseMenu : MonoBehaviour {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 7);
     }
+<<<<<<< HEAD
 
     //Memory1
     public void LoadMemory1()
@@ -145,4 +146,6 @@ public class PauseMenu : MonoBehaviour {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 13);
     }
+=======
+>>>>>>> 7ed656a146c63ed5505a1ba04ac5d6e7b1a0e407
 }

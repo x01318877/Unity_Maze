@@ -955,6 +955,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingTime: 250
   timeIsUp: {fileID: 801983558}
+  retryBtn: {fileID: 0}
   countdownText: {fileID: 578672810}
 --- !u!95 &800824716
 Animator:
@@ -1148,7 +1149,11 @@ Prefab:
     - target: {fileID: 224281639599273544, guid: d956a65cefd9d874bbb620e890e990f8,
         type: 2}
       propertyPath: m_AnchoredPosition.y
+<<<<<<< HEAD
       value: -113
+=======
+      value: 15
+>>>>>>> 7ed656a146c63ed5505a1ba04ac5d6e7b1a0e407
       objectReference: {fileID: 0}
     - target: {fileID: 224281639599273544, guid: d956a65cefd9d874bbb620e890e990f8,
         type: 2}
@@ -1190,10 +1195,13 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 1288569082412466, guid: d956a65cefd9d874bbb620e890e990f8, type: 2}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+=======
+>>>>>>> 7ed656a146c63ed5505a1ba04ac5d6e7b1a0e407
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d956a65cefd9d874bbb620e890e990f8, type: 2}
   m_IsPrefabAsset: 0

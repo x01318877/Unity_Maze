@@ -2381,7 +2381,11 @@ Prefab:
     - target: {fileID: 224281639599273544, guid: d956a65cefd9d874bbb620e890e990f8,
         type: 2}
       propertyPath: m_AnchoredPosition.y
+<<<<<<< HEAD
       value: -115
+=======
+      value: 15
+>>>>>>> 7ed656a146c63ed5505a1ba04ac5d6e7b1a0e407
       objectReference: {fileID: 0}
     - target: {fileID: 224281639599273544, guid: d956a65cefd9d874bbb620e890e990f8,
         type: 2}
@@ -2423,10 +2427,13 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 1288569082412466, guid: d956a65cefd9d874bbb620e890e990f8, type: 2}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+=======
+>>>>>>> 7ed656a146c63ed5505a1ba04ac5d6e7b1a0e407
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d956a65cefd9d874bbb620e890e990f8, type: 2}
   m_IsPrefabAsset: 0
@@ -3042,6 +3049,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1729505150464398, guid: c2362e0d828fe624b99df64cbc71e367,
     type: 2}
   m_PrefabInternal: {fileID: 1078738505}
+<<<<<<< HEAD
+=======
+--- !u!114 &1078738507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1078738506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16a974a5f5e57cb4287ffe8870fc3e8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  congra: {fileID: 842954411}
+>>>>>>> 7ed656a146c63ed5505a1ba04ac5d6e7b1a0e407
 --- !u!1 &1096256739
 GameObject:
   m_ObjectHideFlags: 0
@@ -4380,7 +4402,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14137902c0956fd4faff37a1632a4a39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   startingTime: 200
+=======
+  startingTime: 300
+>>>>>>> 7ed656a146c63ed5505a1ba04ac5d6e7b1a0e407
   timeIsUp: {fileID: 2085116934}
   countdownText: {fileID: 122034935}
 --- !u!1 &1559977726

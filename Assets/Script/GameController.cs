@@ -131,7 +131,11 @@ public class GameController : MonoBehaviour {
         countcorrctGuessses++;
 
         if (countcorrctGuessses == gameGuesses) {
+<<<<<<< HEAD
             SceneManager.LoadScene(sceneNameToLoad);
+=======
+            SceneManager.LoadScene(2);
+>>>>>>> 7ed656a146c63ed5505a1ba04ac5d6e7b1a0e407
         }
     }
 
