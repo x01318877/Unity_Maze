@@ -12,7 +12,7 @@ public class PauseMenu : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (GameIsPaused)
             {
@@ -88,5 +88,61 @@ public class PauseMenu : MonoBehaviour {
         //stop pause
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 6);
+    }
+
+    //random
+    public void LoadMenu7()
+    {
+        //stop pause
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 7);
+    }
+
+    //Memory1
+    public void LoadMemory1()
+    {
+        //stop pause
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 8);
+    }
+
+    //Memory2
+    public void LoadMemory2()
+    {
+        //stop pause
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 9);
+    }
+
+    //Memory3
+    public void LoadMemory3()
+    {
+        //stop pause
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 10);
+    }
+
+    //Memory4
+    public void LoadMemory4()
+    {
+        //stop pause
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 11);
+    }
+
+    //Endless1
+    public void LoadEndless1()
+    {
+        //stop pause
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 12);
+    }
+
+    //Endless2
+    public void LoadEndless2()
+    {
+        //stop pause
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 13);
     }
 }

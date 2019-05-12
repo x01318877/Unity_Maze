@@ -26,4 +26,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Round3.unity
     guid: bacd4038e14829743b110d10df1e9ce8
+  - enabled: 1
+    path: Assets/Scenes/GeneratingMaze.unity
+    guid: bee80beccdfe4447d99731f5b87b2e06
+  - enabled: 1
+    path: Assets/Scenes/MemoryGame1.unity
+    guid: 27f8bc24a47820e438088ae2617758bc
+  - enabled: 1
+    path: Assets/Scenes/MemoryGame2.unity
+    guid: e18a7752fe813c443a56e642196940cd
+  - enabled: 1
+    path: Assets/Scenes/MemoryGame3.unity
+    guid: 41deee3f32541a247bc62a9a1acf6711
+  - enabled: 1
+    path: Assets/Scenes/MemoryGame4.unity
+    guid: 757a21544a07113409da48ef8eb50d3a
+  - enabled: 1
+    path: Assets/Scenes/EndlessRunning1.unity
+    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/EndlessRunning2.unity
+    guid: a7c382249a1c7fd4f9132c86ba8cb6e7
   m_configObjects: {}

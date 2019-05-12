@@ -4,10 +4,14 @@ using System.Collections.Generic;
 
 public class Maze : MonoBehaviour {
 
+    //Adjust Maze so it uses IntVectors when creating the cells and for it size as well, instead of using two seperate integers
+    //set the size as 20x20
 	public IntVector2 size;
 
+    //cell prefab to instantiate
 	public MazeCell cellPrefab;
 
+    //use to insert some delay before each step, could be change in inspector
 	public float generationStepDelay;
 
 	public MazePassage passagePrefab;
@@ -21,27 +25,35 @@ public class Maze : MonoBehaviour {
 
 	public MazeRoomSettings[] roomSettings;
 
+    //store the cell in a 2D array
 	private MazeCell[,] cells;
 
 	private List<MazeRoom> rooms = new List<MazeRoom>();
 
+    //prduces some coordinates inside it
 	public IntVector2 RandomCoordinates {
 		get {
 			return new IntVector2(Random.Range(0, size.x), Random.Range(0, size.z));
 		}
 	}
 
+    //checks whether some coordinates fall inside the maze
 	public bool ContainsCoordinates (IntVector2 coordinate) {
 		return coordinate.x >= 0 && coordinate.x < size.x && coordinate.z >= 0 && coordinate.z < size.z;
 	}
 
+    //generate new cell in a random direction each step
 	public MazeCell GetCell (IntVector2 coordinates) {
 		return cells[coordinates.x, coordinates.z];
 	}
 
+    //constructing the maze contents
 	public IEnumerator Generate () {
-		WaitForSeconds delay = new WaitForSeconds(generationStepDelay);
-		cells = new MazeCell[size.x, size.z];
+        //delay the generation process, so we can see how it works. change generation to coroutine
+        //20x20 cells grid in 4 seconds
+        WaitForSeconds delay = new WaitForSeconds(generationStepDelay);
+        //IntVector2
+        cells = new MazeCell[size.x, size.z];
 		List<MazeCell> activeCells = new List<MazeCell>();
 		DoFirstGenerationStep(activeCells);
 		while (activeCells.Count > 0) {
@@ -56,26 +68,32 @@ public class Maze : MonoBehaviour {
 		activeCells.Add(newCell);
 	}
 
+    //retrieve the current cell, check whether the move is possible
 	private void DoNextGenerationStep (List<MazeCell> activeCells) {
 		int currentIndex = activeCells.Count - 1;
 		MazeCell currentCell = activeCells[currentIndex];
-		if (currentCell.IsFullyInitialized) {
+        //to prevent placing incorrect walls, we should only pick a random direction that is not yet initialized for the current cell.
+        if (currentCell.IsFullyInitialized) {
 			activeCells.RemoveAt(currentIndex);
 			return;
 		}
 		MazeDirection direction = currentCell.RandomUninitializedDirection;
 		IntVector2 coordinates = currentCell.coordinates + direction.ToIntVector2();
 		if (ContainsCoordinates(coordinates)) {
-			MazeCell neighbor = GetCell(coordinates);
+            //If we're still inside the maze, we need to check if the current cell's neightbor doesn't exist yet. 
+            MazeCell neighbor = GetCell(coordinates);
 			if (neighbor == null) {
 				neighbor = CreateCell(coordinates);
 				CreatePassage(currentCell, neighbor, direction);
 				activeCells.Add(neighbor);
 			}
-			else if (currentCell.room.settingsIndex == neighbor.room.settingsIndex) {
+            //If so, we create it and place a passage in between them. 
+            else if (currentCell.room.settingsIndex == neighbor.room.settingsIndex) {
 				CreatePassageInSameRoom(currentCell, neighbor, direction);
 			}
-			else {
+            //But if the neighbor already exists, we separate them with a wall.
+            else
+            {
 				CreateWall(currentCell, neighbor, direction);
 			}
 		}
@@ -84,17 +102,26 @@ public class Maze : MonoBehaviour {
 		}
 	}
 
+    //the creation of individual cells
 	private MazeCell CreateCell (IntVector2 coordinates) {
-		MazeCell newCell = Instantiate(cellPrefab) as MazeCell;
-		cells[coordinates.x, coordinates.z] = newCell;
-		newCell.coordinates = coordinates;
+        //instantiate a new cell
+        MazeCell newCell = Instantiate(cellPrefab) as MazeCell;
+        //put cell into array
+        //IntVector2
+        cells[coordinates.x, coordinates.z] = newCell;
+        //IntVector2
+        newCell.coordinates = coordinates;
+        //give the cell a descriptive name
 		newCell.name = "Maze Cell " + coordinates.x + ", " + coordinates.z;
+        //make the cell a child object of the maze
 		newCell.transform.parent = transform;
+        //position it to the center
 		newCell.transform.localPosition = new Vector3(coordinates.x - size.x * 0.5f + 0.5f, 0f, coordinates.z - size.z * 0.5f + 0.5f);
 		return newCell;
 	}
 
-	private void CreatePassage (MazeCell cell, MazeCell otherCell, MazeDirection direction) {
+    //simply instantiate their respective prefabs and initialize them
+    private void CreatePassage (MazeCell cell, MazeCell otherCell, MazeDirection direction) {
 		MazePassage prefab = Random.value < doorProbability ? doorPrefab : passagePrefab;
 		MazePassage passage = Instantiate(prefab) as MazePassage;
 		passage.Initialize(cell, otherCell, direction);
@@ -121,11 +148,13 @@ public class Maze : MonoBehaviour {
 		}
 	}
 
-	private void CreateWall (MazeCell cell, MazeCell otherCell, MazeDirection direction) {
+    //simply instantiate their respective prefabs and initialize them
+    private void CreateWall (MazeCell cell, MazeCell otherCell, MazeDirection direction) {
 		MazeWall wall = Instantiate(wallPrefabs[Random.Range(0, wallPrefabs.Length)]) as MazeWall;
 		wall.Initialize(cell, otherCell, direction);
 		if (otherCell != null) {
-			wall = Instantiate(wallPrefabs[Random.Range(0, wallPrefabs.Length)]) as MazeWall;
+            //second cell won't exist at the edge of the maze.
+            wall = Instantiate(wallPrefabs[Random.Range(0, wallPrefabs.Length)]) as MazeWall;
 			wall.Initialize(otherCell, cell, direction.GetOpposite());
 		}
 	}

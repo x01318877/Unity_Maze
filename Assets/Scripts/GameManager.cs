@@ -16,7 +16,8 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	private void Update () {
-		if (Input.GetKeyDown(KeyCode.Space)) {
+        //rebuild a maze by key R
+		if (Input.GetKeyDown(KeyCode.R)) {
 			RestartGame();
 		}
 	}
@@ -24,7 +25,9 @@ public class GameManager : MonoBehaviour {
 	private IEnumerator BeginGame () {
 		Camera.main.clearFlags = CameraClearFlags.Skybox;
 		Camera.main.rect = new Rect(0f, 0f, 1f, 1f);
+        //instantiate a maze
 		mazeInstance = Instantiate(mazePrefab) as Maze;
+        //maze cell be generated when game start, starts the coroutine properly
 		yield return StartCoroutine(mazeInstance.Generate());
 		playerInstance = Instantiate(playerPrefab) as Player;
 		playerInstance.SetLocation(mazeInstance.GetCell(mazeInstance.RandomCoordinates));
@@ -33,7 +36,9 @@ public class GameManager : MonoBehaviour {
 	}
 
 	private void RestartGame () {
-		StopAllCoroutines();
+        //stop the coroutine when the game is restart
+        StopAllCoroutines();
+        //destroy the old maze in order to create a new one
 		Destroy(mazeInstance.gameObject);
 		if (playerInstance != null) {
 			Destroy(playerInstance.gameObject);

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
@@ -22,11 +23,16 @@ public class GameController : MonoBehaviour {
     //use to compare two images
     private string firstGuessPuzzle, secondGuessPuzzle;
 
+    //the name set for loaded scene
+    [SerializeField]
+    private string sceneNameToLoad;
+
     void Start()
     {
         GetButtons();
         AddListeners();
         AddGamePuzzles();
+        Time.timeScale = 1f;
         Shuffle(gamePuzzles);
         gameGuesses = gamePuzzles.Count / 2;
     }
@@ -91,7 +97,7 @@ public class GameController : MonoBehaviour {
     }
 
     IEnumerator CheckIfPuzzleMatch() {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.5f);
 
         if (firstGuessPuzzle == secondGuessPuzzle)
         {
@@ -125,8 +131,7 @@ public class GameController : MonoBehaviour {
         countcorrctGuessses++;
 
         if (countcorrctGuessses == gameGuesses) {
-            Debug.Log("Game Finished");
-            Debug.Log("It took you "+ countGuesses + " many guess(es) to finish the game.");
+            SceneManager.LoadScene(sceneNameToLoad);
         }
     }
 

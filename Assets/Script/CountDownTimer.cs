@@ -6,9 +6,10 @@ using UnityEngine.UI;
 public class CountDownTimer : MonoBehaviour {
 
     float currentTime = 0f;
-    float startingTime = 100f;
+    public float startingTime;
 
     public GameObject timeIsUp;
+    //public GameObject retryBtn;
 
     [SerializeField]Text countdownText;
 
@@ -31,6 +32,7 @@ public class CountDownTimer : MonoBehaviour {
         else {
             Time.timeScale = 0;
             timeIsUp.gameObject.SetActive(true);
+            //retryBtn.gameObject.SetActive(true);
             //time left text disappear
             countdownText.gameObject.SetActive(false);
         }
@@ -41,4 +43,5 @@ public class CountDownTimer : MonoBehaviour {
             countdownText.color = Color.yellow;
         }
     }
+
 }

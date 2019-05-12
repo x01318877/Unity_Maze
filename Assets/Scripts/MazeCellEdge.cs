@@ -2,6 +2,7 @@
 
 public abstract class MazeCellEdge : MonoBehaviour {
 
+    //connecting the cells
 	public MazeCell cell, otherCell;
 
 	public MazeDirection direction;
@@ -13,6 +14,7 @@ public abstract class MazeCellEdge : MonoBehaviour {
 		cell.SetEdge(direction, this);
 		transform.parent = cell.transform;
 		transform.localPosition = Vector3.zero;
+        //rotating the cell edge in right direction instead of only north side
 		transform.localRotation = direction.ToRotation();
 	}
 

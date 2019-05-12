@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 33783169666031546}
   - component: {fileID: 23682461054977370}
   - component: {fileID: 65908416906252830}
-  - component: {fileID: 114121791466004032}
+  - component: {fileID: 114924534887526278}
   m_Layer: 0
   m_Name: door
   m_TagString: Untagged
@@ -56,6 +56,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4218377690651674}
+  - component: {fileID: 114341787240764624}
+  - component: {fileID: 114755006551554320}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -82,15 +84,15 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1729505150464398}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.44, y: 0.95000005, z: -8.694693}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 9.45, y: 9.343639, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4603317960484018}
   - {fileID: 4188906069278764}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4603317960484018
 Transform:
   m_ObjectHideFlags: 1
@@ -200,7 +202,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.1257854, y: 1, z: 0.9999995}
   m_Center: {x: 2.062893, y: 0, z: 0}
---- !u!114 &114121791466004032
+--- !u!114 &114341787240764624
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1729505150464398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16a974a5f5e57cb4287ffe8870fc3e8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  congra: {fileID: 0}
+--- !u!114 &114755006551554320
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1729505150464398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16a974a5f5e57cb4287ffe8870fc3e8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  congra: {fileID: 0}
+--- !u!114 &114924534887526278
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -211,7 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16a974a5f5e57cb4287ffe8870fc3e8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: 1
+  congra: {fileID: 0}
 --- !u!136 &136968638672165478
 CapsuleCollider:
   m_ObjectHideFlags: 1
